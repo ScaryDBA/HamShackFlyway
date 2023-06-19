@@ -1,0 +1,107 @@
+{
+  "individualResults": [
+    {
+      "initialSchemaVersion": "4.3",
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Repeatable",
+          "version": "",
+          "description": "SSISDeploy.ps1",
+          "type": "SCRIPT",
+          "filepath": "C:\\Users\\grant\\OneDrive\\Documents\\GitHub\\HamShackFlyway\\.\\sql\\R__SSISDeploy.ps1",
+          "executionTime": 2253
+        },
+        {
+          "category": "Repeatable",
+          "version": "",
+          "description": "SalesInfoTest",
+          "type": "SQL",
+          "filepath": "C:\\Users\\grant\\OneDrive\\Documents\\GitHub\\HamShackFlyway\\.\\sql\\test\\R__SalesInfoTest.sql",
+          "executionTime": 29
+        }
+      ],
+      "migrationsExecuted": 2,
+      "success": true,
+      "flywayVersion": "9.18.0",
+      "database": "hsr",
+      "warnings": [
+        "outOfOrder mode is active. Migration of schema \"public\" may not be reproducible."
+      ],
+      "timestamp": "2023-06-19T10:29:47.531379600",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": "4.3",
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [],
+      "migrationsExecuted": 0,
+      "success": true,
+      "flywayVersion": "9.18.0",
+      "database": "hsr",
+      "warnings": [
+        "outOfOrder mode is active. Migration of schema \"public\" may not be reproducible."
+      ],
+      "timestamp": "2023-06-19T10:29:59.257561100",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": "4.3",
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Repeatable",
+          "version": "",
+          "description": "SSISDeploy.ps1",
+          "type": "SCRIPT",
+          "filepath": "C:\\Users\\grant\\OneDrive\\Documents\\GitHub\\HamShackFlyway\\.\\sql\\R__SSISDeploy.ps1",
+          "executionTime": 625
+        }
+      ],
+      "migrationsExecuted": 1,
+      "success": true,
+      "flywayVersion": "9.18.0",
+      "database": "hsr",
+      "warnings": [
+        "outOfOrder mode is active. Migration of schema \"public\" may not be reproducible."
+      ],
+      "timestamp": "2023-06-19T10:30:19.663476500",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
+    },
+    {
+      "initialSchemaVersion": "4.3",
+      "targetSchemaVersion": null,
+      "schemaName": "",
+      "migrations": [
+        {
+          "category": "Repeatable",
+          "version": "",
+          "description": "SSISDeploy.ps1",
+          "type": "SCRIPT",
+          "filepath": "C:\\Users\\grant\\OneDrive\\Documents\\GitHub\\HamShackFlyway\\.\\sql\\R__SSISDeploy.ps1",
+          "executionTime": 1312
+        }
+      ],
+      "migrationsExecuted": 1,
+      "success": true,
+      "flywayVersion": "9.18.0",
+      "database": "hsr",
+      "warnings": [
+        "outOfOrder mode is active. Migration of schema \"public\" may not be reproducible."
+      ],
+      "timestamp": "2023-06-19T13:20:03.562797300",
+      "operation": "migrate",
+      "exception": null,
+      "licenseFailed": false
+    }
+  ]
+}

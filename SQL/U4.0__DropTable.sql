@@ -1,2 +1,0 @@
-drop TABLE public.InventoryItemType;
-

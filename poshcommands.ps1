@@ -20,4 +20,12 @@ flyway migrate  -url=jdbc:postgresql://hsr.c2ek9ilzyxhz.us-east-1.rds.amazonaws.
 flyway repair
 
 
+## for resetting the build process
 flyway baseline
+
+## docker
+docker run --rm -v ./sql:/flyway/workingdirectory -v ./conf:/flyway/conf flyway/flyway migrate 
+
+docker run --rm -v C:\Users\grant\OneDrive\Documents\GitHub\HamShackFlyway\sql:/flyway/sql -v C:\Users\grant\OneDrive\Documents\GitHub\HamShackFlyway\conf:/flyway/conf flyway/flyway migrate 
+
+docker run flyway/flyway

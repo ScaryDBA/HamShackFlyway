@@ -9,10 +9,15 @@ flyway info
 flyway clean
 
 
+## create a new empty migration file using description and default versioning
+flyway add -description="Demonstration of new migration"
+
+
 
 ## supplying the connection information
 flyway validate -url=jdbc:postgresql://hsr.c2ek9ilzyxhz.us-east-1.rds.amazonaws.com:5432/hamshackradio -user=postgres -password=*cthulhu1988
 
+## migrating the same way
 flyway migrate  -url=jdbc:postgresql://hsr.c2ek9ilzyxhz.us-east-1.rds.amazonaws.com:5432/hamshackradio -user=postgres -password=*cthulhu1988
 
 

@@ -1,3 +1,3 @@
-create view mytest
+create view radio.mytest
 AS
-select * from sales;
+select * from radio.sales;

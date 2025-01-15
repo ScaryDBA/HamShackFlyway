@@ -34,3 +34,7 @@ docker run --rm -v ./sql:/flyway/workingdirectory -v ./conf:/flyway/conf flyway/
 docker run --rm -v C:\Users\grant\OneDrive\Documents\GitHub\HamShackFlyway\sql:/flyway/sql -v C:\Users\grant\OneDrive\Documents\GitHub\HamShackFlyway\conf:/flyway/conf flyway/flyway migrate 
 
 docker run flyway/flyway
+
+
+
+

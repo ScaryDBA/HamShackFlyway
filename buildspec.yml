@@ -10,10 +10,9 @@ phases:
 
             #- docker run --rm -v $(pwd)/sql:/flyway/sql -v $(pwd)/conf:/flyway/conf flyway/flyway clean 
             #- docker run --rm -v $(pwd)/sql:/flyway/sql -v $(pwd)/conf:/flyway/conf flyway/flyway repair
-            #- docker run --rm -v ./sql:/flyway/sql -v $(pwd)/conf:/flyway/conf flyway/flyway migrate 
             #- realpath ./sql 
-            #- docker run --rm -v /codebuild/output/src3482684366/src/github.com/ScaryDBA/HamShackFlyway/sql:/flyway/sql -v $(pwd)/conf:/flyway/conf flyway/flyway migrate 
-            - docker run --rm -v "$(pwd)/sql:/flyway/sql" -v "$(pwd)/conf:/flyway/conf" redgate/flyway migrate -X
+            #- docker run --rm -v "$(pwd)/sql:/flyway/sql" -v "$(pwd)/conf:/flyway/conf" redgate/flyway migrate -X
+            - docker run --rm -v "$(pwd)/dude:/flyway/sql" -v "$(pwd)/conf:/flyway/conf" redgate/flyway migrate -X
             #- docker run --rm -v $(pwd)/sql:/flyway/sql -v $(pwd)/conf:/flyway/conf redgate/flyway migrate
     #post_build:
 #artifacts:

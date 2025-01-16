@@ -12,7 +12,7 @@ phases:
             #- docker run --rm -v $(pwd)/sql:/flyway/sql -v $(pwd)/conf:/flyway/conf flyway/flyway repair
             #- realpath ./sql 
             #- docker run --rm -v "$(pwd)/sql:/flyway/sql" -v "$(pwd)/conf:/flyway/conf" redgate/flyway migrate -X
-            - docker run --rm -v "$(pwd)/dude:/flyway/sql" -v "$(pwd)/conf:/flyway/conf" redgate/flyway migrate -X
+            - docker run --rm -v "$(pwd)/SQL:/flyway/sql" -v "$(pwd)/conf:/flyway/conf" redgate/flyway migrate -X
             #- docker run --rm -v $(pwd)/sql:/flyway/sql -v $(pwd)/conf:/flyway/conf redgate/flyway migrate
     #post_build:
 #artifacts:

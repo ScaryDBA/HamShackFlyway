@@ -11,7 +11,7 @@ phases:
             #- docker run --rm -v $(pwd)/sql:/flyway/sql -v $(pwd)/conf:/flyway/conf flyway/flyway clean 
             #- docker run --rm -v $(pwd)/sql:/flyway/sql -v $(pwd)/conf:/flyway/conf flyway/flyway repair
             #- docker run --rm -v ./sql:/flyway/sql -v $(pwd)/conf:/flyway/conf flyway/flyway migrate 
-            realpath /sql
+            - realpath /sql
             #- docker run --rm -v filesystem:/flyway/sql -v $(pwd)/conf:/flyway/conf flyway/flyway migrate 
             #- docker run --rm -v $(pwd)/sql:/flyway/sql -v $(pwd)/conf:/flyway/conf redgate/flyway migrate
     #post_build:

@@ -1,9 +1,9 @@
 ## core command to run Flyway
 ## assumes a configuration file is defined
-flyway migrate
+flyway -configFiles="conf\local.conf" migrate
 
 ## get a full understanding of the migrations available
-flyway info
+flyway -configFiles="conf\local.conf" info
 
 ## not what it sounds like
 flyway clean

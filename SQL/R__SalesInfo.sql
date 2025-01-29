@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION public.SalesInfo ()
+CREATE OR REPLACE FUNCTION public.salesinfo ()
 returns table (
     "SalesID" integer,
     "ProductID" integer,
@@ -14,6 +14,6 @@ LANGUAGE plpgsql
 AS $$
 BEGIN
 SELECT *
-FROM public.Sales AS s;
+FROM public.sales AS s;
 END;
 $$;

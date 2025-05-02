@@ -17,12 +17,15 @@ outOfOrder = true
 schemaModelLocation = "schema-model"
 validateMigrationNaming = true
 
-[flyway.check]
-majorTolerance = 0
+  [flyway.check]
+  majorTolerance = 0
 
 [flywayDesktop]
 developmentEnvironment = "development"
 shadowEnvironment = "shadow"
+
+  [flywayDesktop.generate]
+  undoScripts = false
 
 [redgateCompare]
 filterFile = "filter.rgf"

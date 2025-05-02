@@ -1,0 +1,32 @@
+table "radio"."inventory" {
+  primaryKey = {
+    columns = [
+      "inventory_id"
+    ]
+    name = "inventory_pk"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "inventory_id" {
+      type = integer
+      null = NOT NULL
+      generatedAsIdentity = BY DEFAULT
+    }
+    column "inventory_item_id" {
+      type = integer
+      null = NOT NULL
+    }
+  )
+}
+
+foreignKey "radio"."inventory"."inventory_item_inventory" {
+  columns = [
+    "inventory_item_id"
+  ]
+  referencedTable = "radio"."inventory_item"
+  referencedColumns = [
+    "inventory_item_id"
+  ]
+}
+

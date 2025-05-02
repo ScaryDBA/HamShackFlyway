@@ -1,0 +1,15 @@
+composite "public"."band" {
+  owner = postgres
+  fields = (
+    field "band_name" {
+      type = text
+    }
+    field "upper" {
+      type = numeric(7,3)
+    }
+    field "lower" {
+      type = numeric(7,3)
+    }
+  )
+}
+

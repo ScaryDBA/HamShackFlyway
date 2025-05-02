@@ -1,0 +1,9 @@
+table "public"."kcrocks" {
+  owner = postgres
+  columns = (
+    column "id" {
+      type = integer
+    }
+  )
+}
+

@@ -1,0 +1,17 @@
+view "radio"."fosdem" {
+  text = """-
+SELECT radio_id,
+    radio_name
+   FROM radio.radios;
+"""
+  owner = postgres
+  columns = (
+    column "radio_id" {
+      type = integer
+    }
+    column "radio_name" {
+      type = character varying(255)
+    }
+  )
+}
+

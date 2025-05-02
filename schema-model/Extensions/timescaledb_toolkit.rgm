@@ -1,0 +1,5 @@
+extension "timescaledb_toolkit" {
+  version = 1.19.0
+  schema = "public"
+}
+

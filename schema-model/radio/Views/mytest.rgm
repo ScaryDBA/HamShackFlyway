@@ -1,0 +1,17 @@
+view "radio"."mytest" {
+  text = """-
+SELECT sales_id,
+    sales_date
+   FROM radio.sales;
+"""
+  owner = postgres
+  columns = (
+    column "sales_id" {
+      type = integer
+    }
+    column "sales_date" {
+      type = timestamp without time zone
+    }
+  )
+}
+

@@ -1,0 +1,21 @@
+table "radio"."inventory_item" {
+  primaryKey = {
+    columns = [
+      "inventory_item_id"
+    ]
+    name = "inventory_item_pk"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "inventory_item_id" {
+      type = integer
+      null = NOT NULL
+      generatedAsIdentity = BY DEFAULT
+    }
+    column "inventory_item_name" {
+      type = character varying(200)
+    }
+  )
+}
+

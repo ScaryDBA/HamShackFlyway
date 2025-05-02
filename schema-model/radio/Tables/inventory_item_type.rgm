@@ -1,0 +1,14 @@
+table "radio"."inventory_item_type" {
+  owner = postgres
+  columns = (
+    column "inventory_item_type_id" {
+      type = integer
+      null = NOT NULL
+    }
+    column "invetory_item_desc" {
+      type = character varying(50)
+      null = NOT NULL
+    }
+  )
+}
+

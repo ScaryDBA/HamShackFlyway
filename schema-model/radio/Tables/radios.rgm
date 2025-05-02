@@ -1,0 +1,17 @@
+table "radio"."radios" {
+  owner = postgres
+  columns = (
+    column "radio_id" {
+      type = integer
+      null = NOT NULL
+    }
+    column "radio_name" {
+      type = character varying(255)
+      null = NOT NULL
+    }
+    column "bands" {
+      type = public.band
+    }
+  )
+}
+

@@ -1,0 +1,18 @@
+function "public"."add_test()" {
+  text = """
+
+begin
+    select
+	*
+from
+	radio.radios;
+end;
+
+"""
+  returnType = TABLE(radio_id integer, radio_name character varying)
+  arguments = [
+  ]
+  language = plpgsql
+  owner = postgres
+}
+

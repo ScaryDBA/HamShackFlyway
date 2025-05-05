@@ -1,0 +1,42 @@
+function "public"."radiomultirange()" {
+  text = multirange_constructor0
+  returnType = public.radiomultirange
+  arguments = [
+  ]
+  language = internal
+  volatility = IMMUTABLE
+  owner = postgres
+}
+
+function "public"."radiomultirange(public.radiorange)" {
+  text = multirange_constructor1
+  returnType = public.radiomultirange
+  arguments = <
+    {
+      name = 
+      type = public.radiorange
+      mode = IN
+    }
+
+  >
+  language = internal
+  volatility = IMMUTABLE
+  owner = postgres
+}
+
+function "public"."radiomultirange(public.radiorange[])" {
+  text = multirange_constructor2
+  returnType = public.radiomultirange
+  arguments = <
+    {
+      name = 
+      type = public.radiorange[]
+      mode = VARIADIC
+    }
+
+  >
+  language = internal
+  volatility = IMMUTABLE
+  owner = postgres
+}
+

@@ -12,6 +12,9 @@ table "radio"."radios" {
     column "bands" {
       type = public.band
     }
+    column "transmission" {
+      type = public.transmissiontype
+    }
   )
 }
 

@@ -1,0 +1,24 @@
+function "radio"."radiodetails(integer)" {
+  text = """-
+
+SELECT
+	r.radio_id,
+	r.radio_name
+FROM
+	radio.radios AS r
+WHERE
+	r.radio_id = radioid 
+"""
+  returnType = TABLE(radio_id integer, radio_name character varying)
+  arguments = <
+    {
+      name = radioid
+      type = integer
+      mode = IN
+    }
+
+  >
+  language = sql
+  owner = postgres
+}
+

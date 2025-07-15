@@ -1,0 +1,22 @@
+table "radio"."radioantenna" {
+  primaryKey = {
+    columns = [
+      "radio_id"
+      "antenna_id"
+    ]
+    name = "pkradioantenna"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "radio_id" {
+      type = integer
+      null = NOT NULL
+    }
+    column "antenna_id" {
+      type = integer
+      null = NOT NULL
+    }
+  )
+}
+

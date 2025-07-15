@@ -1,0 +1,52 @@
+table "radio"."bands" {
+  primaryKey = {
+    columns = [
+      "band_id"
+    ]
+    name = "pkbands"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "band_id" {
+      type = integer
+      null = NOT NULL
+      generatedAsIdentity = ALWAYS
+    }
+    column "band_name" {
+      type = character varying(100)
+      null = NOT NULL
+    }
+    column "country_id" {
+      type = integer
+      null = NOT NULL
+    }
+  )
+}
+
+foreignKey "radio"."bands"."bands_country_id_fkey" {
+  columns = [
+    "country_id"
+  ]
+  referencedTable = "radio"."countries"
+  referencedColumns = [
+    "country_id"
+  ]
+}
+
+index "radio"."bands_band_name_country_id" {
+  table = "radio"."bands"
+  type = btree
+  columns = <
+    {
+      definition = band_name
+    }
+
+    {
+      definition = country_id
+    }
+
+  >
+  isUnique = True
+}
+

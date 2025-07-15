@@ -1,0 +1,22 @@
+table "radio"."countries" {
+  primaryKey = {
+    columns = [
+      "country_id"
+    ]
+    name = "pkcountry"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "country_id" {
+      type = integer
+      null = NOT NULL
+      generatedAsIdentity = ALWAYS
+    }
+    column "country_name" {
+      type = character varying(100)
+      null = NOT NULL
+    }
+  )
+}
+

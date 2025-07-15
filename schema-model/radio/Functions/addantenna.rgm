@@ -1,0 +1,39 @@
+function "radio"."addantenna(character varying, integer, integer)" {
+  text = """
+ 
+INSERT
+	INTO
+	radio.antenna
+(antenna_name,
+	manufacturer_id,
+	connectortype_id)
+VALUES
+(antennaname,
+manufacturerid,
+connectortypeid)
+"""
+  returnType = void
+  arguments = <
+    {
+      name = antennaname
+      type = character varying
+      mode = IN
+    }
+
+    {
+      name = manufacturerid
+      type = integer
+      mode = IN
+    }
+
+    {
+      name = connectortypeid
+      type = integer
+      mode = IN
+    }
+
+  >
+  language = sql
+  owner = postgres
+}
+

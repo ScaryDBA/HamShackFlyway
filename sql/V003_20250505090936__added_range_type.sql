@@ -2,52 +2,10 @@
 SET check_function_bodies = false;
 
 
-DO language plpgsql $$BEGIN RAISE NOTICE 'Creating public.radiorange(double, double)...';END$$;
-CREATE FUNCTION public.radiorange(IN double precision, IN double precision)
-RETURNS public.radiorange
-LANGUAGE internal
-IMMUTABLE
-AS $_$range_constructor2$_$;
-ALTER FUNCTION public.radiorange(IN double precision, IN double precision) OWNER TO postgres;
+CREATE TYPE radiorange AS RANGE (subtype = float8,
+subtype_diff = float8mi);
 
 
-DO language plpgsql $$BEGIN RAISE NOTICE 'Creating public.radiorange(double, double, text)...';END$$;
-CREATE FUNCTION public.radiorange(IN double precision, IN double precision, IN text)
-RETURNS public.radiorange
-LANGUAGE internal
-IMMUTABLE
-AS $_$range_constructor3$_$;
-ALTER FUNCTION public.radiorange(IN double precision, IN double precision, IN text) OWNER TO postgres;
-
-
-DO language plpgsql $$BEGIN RAISE NOTICE 'Creating public.radiomultirange(public.radiorange[])...';END$$;
-CREATE FUNCTION public.radiomultirange(VARIADIC public.radiorange[])
-RETURNS public.radiomultirange
-LANGUAGE internal
-IMMUTABLE
-AS $_$multirange_constructor2$_$;
-ALTER FUNCTION public.radiomultirange(VARIADIC public.radiorange[]) OWNER TO postgres;
-
-
-DO language plpgsql $$BEGIN RAISE NOTICE 'Creating public.radiomultirange(public.radiorange)...';END$$;
-CREATE FUNCTION public.radiomultirange(IN public.radiorange)
-RETURNS public.radiomultirange
-LANGUAGE internal
-IMMUTABLE
-AS $_$multirange_constructor1$_$;
-ALTER FUNCTION public.radiomultirange(IN public.radiorange) OWNER TO postgres;
-
-
-DO language plpgsql $$BEGIN RAISE NOTICE 'Creating public.radiomultirange()...';END$$;
-CREATE FUNCTION public.radiomultirange()
-RETURNS public.radiomultirange
-LANGUAGE internal
-IMMUTABLE
-AS $_$multirange_constructor0$_$;
-ALTER FUNCTION public.radiomultirange() OWNER TO postgres;
-
-
-DO language plpgsql $$BEGIN RAISE NOTICE 'Creating radio.radios.reception...';END$$;
-ALTER TABLE radio.radios ADD COLUMN reception public.radiorange;
+ALTER TABLE radio.radios ADD COLUMN reception radiorange;
 
 SET check_function_bodies = true;

@@ -1,0 +1,34 @@
+table "radio"."connectortypes" {
+  primaryKey = {
+    columns = [
+      "connectorytype_id"
+    ]
+    name = "pkconnectortypes"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "connectorytype_id" {
+      type = integer
+      null = NOT NULL
+      generatedAsIdentity = ALWAYS
+    }
+    column "connectortype_name" {
+      type = character varying(100)
+      null = NOT NULL
+    }
+  )
+}
+
+index "radio"."connectortypes_connectorytype_name" {
+  table = "radio"."connectortypes"
+  type = btree
+  columns = <
+    {
+      definition = connectorytype_id
+    }
+
+  >
+  isUnique = True
+}
+

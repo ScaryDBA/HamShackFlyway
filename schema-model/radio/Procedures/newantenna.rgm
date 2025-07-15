@@ -1,0 +1,47 @@
+procedure "radio"."newantenna(character varying, integer, integer)" {
+  text = """
+ 
+BEGIN
+
+IF manufacturerid < 1 THEN 
+	ROLLBACK;
+ELSEIF connectortypeid < 1 THEN 
+	ROLLBACK;
+ELSE
+	INSERT
+		INTO
+		radio.antenna
+	(antenna_name,
+	manufacturer_id,
+	connectortype_id)
+	VALUES
+	(antennaname,
+	manufacturerid,
+	connectortypeid);
+END IF;
+END
+"""
+  arguments = <
+    {
+      name = antennaname
+      type = character varying
+      mode = IN
+    }
+
+    {
+      name = manufacturerid
+      type = integer
+      mode = IN
+    }
+
+    {
+      name = connectortypeid
+      type = integer
+      mode = IN
+    }
+
+  >
+  language = plpgsql
+  owner = postgres
+}
+

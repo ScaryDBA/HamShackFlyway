@@ -1,0 +1,44 @@
+table "radio"."digitalmodes" {
+  primaryKey = {
+    columns = [
+      "digitalmode_id"
+    ]
+    name = "pkdigitalmode"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "digitalmode_id" {
+      type = integer
+      null = NOT NULL
+      generatedAsIdentity = ALWAYS
+    }
+    column "digitalmode_name" {
+      type = character varying(100)
+      null = NOT NULL
+    }
+  )
+}
+
+foreignKey "radio"."digitalmodes"."digitalmodes_digitalmode_id_fkey" {
+  columns = [
+    "digitalmode_id"
+  ]
+  referencedTable = "radio"."digitalmodes"
+  referencedColumns = [
+    "digitalmode_id"
+  ]
+}
+
+index "radio"."digitalmodes_digitalmode_name" {
+  table = "radio"."digitalmodes"
+  type = btree
+  columns = <
+    {
+      definition = digitalmode_id
+    }
+
+  >
+  isUnique = True
+}
+

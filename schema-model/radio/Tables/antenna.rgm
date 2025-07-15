@@ -1,19 +1,19 @@
-table "radio"."radios" {
+table "radio"."antenna" {
   primaryKey = {
     columns = [
-      "radio_id"
+      "antenna_id"
     ]
-    name = "pkradios"
+    name = "pkantenna"
     objectType = primaryKey
   }
   owner = postgres
   columns = (
-    column "radio_id" {
+    column "antenna_id" {
       type = integer
       null = NOT NULL
       generatedAsIdentity = ALWAYS
     }
-    column "radio_name" {
+    column "antenna_name" {
       type = character varying(100)
       null = NOT NULL
     }
@@ -21,20 +21,14 @@ table "radio"."radios" {
       type = integer
       null = NOT NULL
     }
-    column "picture" {
-      type = bytea
-    }
     column "connectortype_id" {
       type = integer
       null = NOT NULL
     }
-    column "digitalmode_id" {
-      type = integer
-    }
   )
 }
 
-foreignKey "radio"."radios"."radios_connectortype_id_fkey" {
+foreignKey "radio"."antenna"."antenna_connectortype_id_fkey" {
   columns = [
     "connectortype_id"
   ]
@@ -44,7 +38,7 @@ foreignKey "radio"."radios"."radios_connectortype_id_fkey" {
   ]
 }
 
-foreignKey "radio"."radios"."radios_manufacturer_id_fkey" {
+foreignKey "radio"."antenna"."antenna_manufacturer_id_fkey" {
   columns = [
     "manufacturer_id"
   ]
@@ -54,12 +48,12 @@ foreignKey "radio"."radios"."radios_manufacturer_id_fkey" {
   ]
 }
 
-index "radio"."radios_radio_name_manufacturer_id_unique" {
-  table = "radio"."radios"
+index "radio"."antenna_antenna_name_unique" {
+  table = "radio"."antenna"
   type = btree
   columns = <
     {
-      definition = radio_name
+      definition = antenna_name
     }
 
     {

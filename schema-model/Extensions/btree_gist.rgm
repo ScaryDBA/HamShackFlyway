@@ -1,0 +1,5 @@
+extension "btree_gist" {
+  version = 1.7
+  schema = "public"
+}
+

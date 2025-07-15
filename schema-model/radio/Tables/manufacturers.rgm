@@ -1,0 +1,34 @@
+table "radio"."manufacturers" {
+  primaryKey = {
+    columns = [
+      "manufacturer_id"
+    ]
+    name = "pkmanufacturers"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "manufacturer_id" {
+      type = integer
+      null = NOT NULL
+      generatedAsIdentity = ALWAYS
+    }
+    column "manufacturer_name" {
+      type = character varying(100)
+      null = NOT NULL
+    }
+  )
+}
+
+index "radio"."manufacturers_manufacturer_name_unique" {
+  table = "radio"."manufacturers"
+  type = btree
+  columns = <
+    {
+      definition = manufacturer_name
+    }
+
+  >
+  isUnique = True
+}
+

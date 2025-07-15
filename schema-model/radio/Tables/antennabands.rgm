@@ -1,0 +1,42 @@
+table "radio"."antennabands" {
+  primaryKey = {
+    columns = [
+      "antenna_id"
+      "band_id"
+    ]
+    name = "pkantennabands"
+    objectType = primaryKey
+  }
+  owner = postgres
+  columns = (
+    column "antenna_id" {
+      type = integer
+      null = NOT NULL
+    }
+    column "band_id" {
+      type = integer
+      null = NOT NULL
+    }
+  )
+}
+
+foreignKey "radio"."antennabands"."antennabands_antenna_id_fkey" {
+  columns = [
+    "antenna_id"
+  ]
+  referencedTable = "radio"."antenna"
+  referencedColumns = [
+    "antenna_id"
+  ]
+}
+
+foreignKey "radio"."antennabands"."antennabands_band_id_fkey" {
+  columns = [
+    "band_id"
+  ]
+  referencedTable = "radio"."bands"
+  referencedColumns = [
+    "band_id"
+  ]
+}
+

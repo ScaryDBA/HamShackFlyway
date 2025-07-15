@@ -1,8 +1,0 @@
-enum "public"."transmissiontype" {
-  values = [
-    Analog
-    Digital
-  ]
-  owner = postgres
-}
-

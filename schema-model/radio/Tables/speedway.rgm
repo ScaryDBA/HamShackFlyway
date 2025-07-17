@@ -1,0 +1,12 @@
+table "radio"."speedway" {
+  owner = postgres
+  columns = (
+    column "id" {
+      type = integer
+    }
+    column "myvalue" {
+      type = character varying(500)
+    }
+  )
+}
+

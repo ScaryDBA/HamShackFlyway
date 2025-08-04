@@ -6,6 +6,7 @@ table "radio"."countries" {
     name = "pkcountry"
     objectType = primaryKey
   }
+  dataFilename = countries-data.json
   owner = postgres
   columns = (
     column "country_id" {

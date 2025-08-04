@@ -7,6 +7,10 @@ displayName = "Development database"
 schemas = [ "radio", "public" ]
 url = "jdbc:postgresql://localhost:5432/hamshackradio?user=postgres&password=*cthulhu1988"
 
+[environments.FinancialTesting]
+url = "jdbc:postgresql://localhost:5432/hsrft"
+schemas = [ "radio", "public" ]
+
 [flyway]
 cleanDisabled = false
 environment = "development"
@@ -35,3 +39,11 @@ detectRenames = "identical-only"
 
 [redgateCompare.postgresql.options.ignores]
 ignoreNewlinesInTextObjects = "off"
+
+  [[redgateCompare.staticDataTables]]
+  schema = "radio"
+  table = "bands"
+
+  [[redgateCompare.staticDataTables]]
+  schema = "radio"
+  table = "countries"

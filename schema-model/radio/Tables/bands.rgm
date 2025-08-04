@@ -6,6 +6,7 @@ table "radio"."bands" {
     name = "pkbands"
     objectType = primaryKey
   }
+  dataFilename = bands-data.json
   owner = postgres
   columns = (
     column "band_id" {
@@ -20,6 +21,12 @@ table "radio"."bands" {
     column "country_id" {
       type = integer
       null = NOT NULL
+    }
+    column "start_freq" {
+      type = numeric(6,3)
+    }
+    column "stop_freq" {
+      type = numeric(6,3)
     }
   )
 }
